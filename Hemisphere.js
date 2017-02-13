@@ -30,6 +30,8 @@ class Hemisphere {
         //radius=0.1;
         //vertSubDiv=5;
         //subDiv=5;
+        
+        // Top half of Sphere
         for(let j = 0; j < vertSubDiv; j++) {
             // One latitudinal triangle strip.
             for(let i = 0; i <= subDiv; i++) {
@@ -50,6 +52,7 @@ class Hemisphere {
             }
         }
 
+        // Bottom half of Sphere
         for(let j = 0; j < vertSubDiv; j++) {
             // One latitudinal triangle strip.
             for(let i = 0; i <= subDiv; i++) {
