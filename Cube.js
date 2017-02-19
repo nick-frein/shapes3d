@@ -128,52 +128,55 @@ class Cube {
 
 
 // top
+        let county = 0;
         y=-0.2;
         while(y<0.2){
             x= -0.2;
             while(x <= 0.2){
-                vertices.push(x, y, 0.4);
-                vec3.lerp(randColor, col1, col2, Math.random());
-                vertices.push(randColor[0], randColor[1], randColor[2]);
-                count++;
+                if(county != cubeSubDiv) {
+                    vertices.push(x, y, 0.4);
+                    vec3.lerp(randColor, col1, col2, Math.random());
+                    vertices.push(randColor[0], randColor[1], randColor[2]);
+                    count++;
 
-                vertices.push(x, y+ 0.4/cubeSubDiv, 0.4);
-                vec3.lerp(randColor, col1, col2, Math.random());
-                vertices.push(randColor[0], randColor[1], randColor[2]);
-                count++;
-
+                    vertices.push(x, y + 0.4 / cubeSubDiv, 0.4);
+                    vec3.lerp(randColor, col1, col2, Math.random());
+                    vertices.push(randColor[0], randColor[1], randColor[2]);
+                    count++;
+                }
                 x=x+0.4/cubeSubDiv;
             }
             //x= 0.2;
 
-
-            y=y+0.4/cubeSubDiv
+            county = county +1;
+            y=y+0.4/cubeSubDiv;
         }
         let totalTopVertices = count;
 
 
-
+county = 0;
     //bottom
         y=-0.2;
         while(y<0.2){
             x= 0.2;
             while(x >= -0.2){
-                vertices.push(x, y, 0);
-                vec3.lerp(randColor, col1, col2, Math.random());
-                vertices.push(randColor[0], randColor[1], randColor[2]);
-                count++;
+                if(county != cubeSubDiv) {
+                    vertices.push(x, y, 0);
+                    vec3.lerp(randColor, col1, col2, Math.random());
+                    vertices.push(randColor[0], randColor[1], randColor[2]);
+                    count++;
 
-                vertices.push(x, y+ 0.4/cubeSubDiv, 0);
-                vec3.lerp(randColor, col1, col2, Math.random());
-                vertices.push(randColor[0], randColor[1], randColor[2]);
-                count++;
-
+                    vertices.push(x, y + 0.4 / cubeSubDiv, 0);
+                    vec3.lerp(randColor, col1, col2, Math.random());
+                    vertices.push(randColor[0], randColor[1], randColor[2]);
+                    count++;
+                }
                 x=x-0.4/cubeSubDiv;
             }
             //x= 0.2;
 
-
-            y=y+0.4/cubeSubDiv
+            county = county +1;
+            y=y+0.4/cubeSubDiv;
         }
 
         // vertices.push(1,1,-1);
